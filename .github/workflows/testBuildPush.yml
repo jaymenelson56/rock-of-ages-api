@@ -53,5 +53,6 @@ jobs:
       - name: Build & push Docker image
         run: |
           IMAGE="${{ vars.ECR_REGISTRY }}/${{ vars.ECR_REPOSITORY }}:latest"
+          echo "Using Docker image: '$IMAGE'"
           docker build -t "$IMAGE" .
           docker push "$IMAGE"
